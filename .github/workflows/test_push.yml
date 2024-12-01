@@ -23,6 +23,7 @@ jobs:
       # Step 3: Install dependencies
       - name: Install dependencies
         run: |
+          cd starter
           python -m pip install --upgrade pip
           pip install pytest flake8
           pip install -r starter/requirements.txt
