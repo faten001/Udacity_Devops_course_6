@@ -7,7 +7,7 @@ import numpy as np
 @pytest.fixture
 def data():
     """ Simple function to generate some fake Pandas data."""
-    df = pd.read_csv('starter/data/census.csv')
+    df = pd.read_csv('data/census.csv')
     # talk a small subset of the data for testing.
     df = df[:10].copy()
     

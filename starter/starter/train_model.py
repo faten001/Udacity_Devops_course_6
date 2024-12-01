@@ -11,7 +11,7 @@ from sklearn.compose import ColumnTransformer
 import numpy as np
 
 # Add code to load in the data.
-data = pd.read_csv('starter/data/census.csv')
+data = pd.read_csv('data/census.csv')
 # the code to remove white spaces in categorical columns.
 #num_cols = data._get_numeric_data().columns
 #categorical_col =  list(set(data.columns) - set(num_cols))
@@ -51,14 +51,14 @@ precision, recall, fbeta = compute_model_metrics(y_train,pred_train)
 print(f'Training Scores\nprecision: {precision}\nrecall: {recall}\nfbeta: {fbeta}')
 
 # save the model and the encoders
-joblib.dump(model,'starter/model/random_forest.sav')
-joblib.dump(encoder,'starter/model/one_h_encoder.sav')
-joblib.dump(lb,'starter/model/label_coding.sav')
+joblib.dump(model,'model/random_forest.sav')
+joblib.dump(encoder,'model/one_h_encoder.sav')
+joblib.dump(lb,'model/label_coding.sav')
 
 # load the model and encoders for inference on test data
-rf = joblib.load('starter/model/random_forest.sav')
-encoder = joblib.load('starter/model/one_h_encoder.sav')
-lb = joblib.load('starter/model/label_coding.sav')
+rf = joblib.load('model/random_forest.sav')
+encoder = joblib.load('model/one_h_encoder.sav')
+lb = joblib.load('model/label_coding.sav')
 X_test, y_test, encoder_test, lb_test = process_data(
     test, categorical_features=cat_features, label="salary", training=False, encoder=encoder,lb=lb
 )
