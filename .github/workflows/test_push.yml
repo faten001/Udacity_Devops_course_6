@@ -36,4 +36,4 @@ jobs:
       # Step 5: Run pytest
       - name: Run pytest
         run: |
-          pytest starter/ml_test.py
+          python3 -m pytest starter/ml_test.py
