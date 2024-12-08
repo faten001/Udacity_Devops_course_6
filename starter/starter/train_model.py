@@ -46,7 +46,7 @@ pred_train = inference(model, X_train)
 precision, recall, fbeta = compute_model_metrics(y_train, pred_train)
 # print training scores
 print(f"Training Scores\nprecision: {precision} \
-      recall: {recall}\nfbeta: {fbeta}")
+\nrecall: {recall}\nfbeta: {fbeta}")
 
 # save the model and the encoders
 joblib.dump(model, 'model/random_forest.sav')
@@ -67,4 +67,4 @@ pred = inference(rf, X_test)
 precision, recall, fbeta = compute_model_metrics(y_test, pred)
 # print test scores
 print(f"\nTesting Scores\nprecision: {precision} \
-      recall: {recall}\nfbeta: {fbeta}")
+\nrecall: {recall}\nfbeta: {fbeta}")
