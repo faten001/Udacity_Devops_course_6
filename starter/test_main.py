@@ -51,6 +51,9 @@ def test_post_wrong_input():
     # check the status code
     assert x.status_code == 422
     # check the error msg.
-    assert (json.loads(x.content.decode('utf-8')) ==
-            {"status": "failed", "error": "Incorrect input",
-             "details": "column ('body', 'age') is missing"})
+    # local deployment
+    # msg= {"status": "failed", "error": "Incorrect input",
+    #          "details": "column ('body', 'age') is missing"}
+    msg = {"status": "failed", "error": "Incorrect input",
+           "details": "column ('body', 'age') is value_error.missing"}
+    assert (json.loads(x.content.decode('utf-8')) == msg)
