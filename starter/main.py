@@ -82,8 +82,8 @@ async def request_validation_exception_handler(request: Request,
         content={
             "status": "failed",
             "error": "Incorrect input",
-            "details": f"""column {exc.errors()[0]['loc']}
-            is {exc.errors()[0]['type']}""",
+            "details": f"column {exc.errors()[0]['loc']}\
+            is {exc.errors()[0]['type']}",
         },
     )
 

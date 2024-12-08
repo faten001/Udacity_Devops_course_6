@@ -7,7 +7,10 @@ client = TestClient(app)
 
 # test the greeting function.
 def test_get():
-    r = client.get('/')
+    # local deployment
+    # r = client.get('/')
+    # render deployment
+    r = requests.get(url="https://udacity-devops-course-6.onrender.com/")
     assert r.status_code == 200
     assert r.json() == {"Greeting message": "Hello there"}
 
@@ -20,7 +23,11 @@ def test_post():
             "race": "White", "sex": "Female",
             "capital_gain": 1000, "capital_loss": 0,
             "hours_per_week": 200, "native_country": "United-States"}
-    x = requests.post('http://127.0.0.1:8000/inference', json=data)
+    # local deployment
+    # x = requests.post('http://127.0.0.1:8000/inference', json=data)
+    # deployment on render
+    x = requests.post('https://udacity-devops-course-6.onrender.com/inference',
+                      json=data)
     prediction = json.loads(x.content.decode('utf-8'))['prediction']
     # check the status code
     assert x.status_code == 200
@@ -36,7 +43,11 @@ def test_post_wrong_input():
             "race": "White", "sex": "Female",
             "capital_gain": 1000, "capital_loss": 0,
             "hours_per_week": 200, "native_country": "United-States"}
-    x = requests.post('http://127.0.0.1:8000/inference', json=data)
+    # local deployment
+    # x = requests.post('http://127.0.0.1:8000/inference', json=data)
+    # render deployment
+    x = requests.post('https://udacity-devops-course-6.onrender.com/inference',
+                      json=data)
     # check the status code
     assert x.status_code == 422
     # check the error msg.
