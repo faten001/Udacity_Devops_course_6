@@ -7,7 +7,7 @@ data = {"age": 40, "workclass": "Private", "fnlgt": 83311,
         "education_num": 14, "marital_status": "Never-married",
         "occupation": "Tech-support",
         "relationship": "Not-in-family", "race": "White", "sex": "Female",
-        "capital_gain": 1000, "capital_loss": 0, "hours_per_week": 200,
+        "capital_gain": 1000, "capital_loss": 0, "hours_per_week": 50,
         "native_country": "United-States"}
 
 # sending request to live api.
